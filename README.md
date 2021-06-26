@@ -10,7 +10,9 @@ mvn clean install spring-boot:run
 Use Postman or any other tool to send a post request to the service
 
 ##### Resource: 
-`http://localhost:8080/validate`
+```
+http://localhost:8080/validate
+```
 
 ##### Headers:
 ```
