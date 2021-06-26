@@ -1,25 +1,24 @@
 package com.validator.PasswordValidator.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties("validator.password")
 public class PasswordValidatorConfig {
-    @Value("required")
+
+    @Value("${validator.password.required}")
     private int required;
 
-    @Value("length")
+    @Value("${validator.password.length}")
     private int length;
 
-    @Value("letters.lowercase")
+    @Value("${validator.password.letters.lowercase}")
     private int minLowerCase;
 
-    @Value("letters.uppercase")
+    @Value("${validator.password.letters.uppercase}")
     private int minUpperCase;
 
-    @Value("letters.numeric")
+    @Value("${validator.password.letters.numeric}")
     private int minNumeric;
 
     public int getRequired() {
