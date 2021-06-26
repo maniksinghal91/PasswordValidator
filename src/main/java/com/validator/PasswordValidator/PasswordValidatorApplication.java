@@ -13,6 +13,7 @@ public class PasswordValidatorApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(PasswordValidatorApplication.class);
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(PasswordValidatorApplication.class, args);
 	}
