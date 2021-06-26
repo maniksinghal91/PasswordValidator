@@ -1,0 +1,8 @@
+validator:
+  password:
+    required: 3
+    length: 8
+    letters:
+      uppercase: 1
+      lowercase: 1
+      numeric: 1
