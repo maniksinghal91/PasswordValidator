@@ -1,13 +1,10 @@
 package com.validator.PasswordValidator.controller;
 
-import com.validator.PasswordValidator.model.ValidationRequest;
-import com.validator.PasswordValidator.model.ValidationResponse;
+import com.validator.PasswordValidator.model.PasswordValidationRequest;
+import com.validator.PasswordValidator.model.PasswordValidationResponse;
 import com.validator.PasswordValidator.service.PasswordValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ValidatorController {
@@ -19,9 +16,10 @@ public class ValidatorController {
         this.passwordValidationService = passwordValidationService;
     }
 
-    @RequestMapping(value = "/validate", method = RequestMethod.POST)
-    public ValidationResponse validate(ValidationRequest request) {
-        ValidationResponse response = new ValidationResponse();
+    @ResponseBody
+    @RequestMapping(value = "/validate", method = RequestMethod.POST, headers = { "Content-Type=application/json" })
+    public PasswordValidationResponse validate(@RequestBody PasswordValidationRequest request) {
+        PasswordValidationResponse response = new PasswordValidationResponse();
         response.setAccepted(passwordValidationService.validate(request.getPassword()));
         return response;
     }

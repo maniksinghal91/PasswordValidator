@@ -1,6 +1,6 @@
 package com.validator.PasswordValidator.model;
 
-public class ValidationRequest {
+public class PasswordValidationRequest {
 
     private String password;
 
