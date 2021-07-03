@@ -22,7 +22,7 @@ public class UpperCaseLetterRule implements Rule<String> {
         for (char c : parameter.toCharArray())
             if (c >= 'A' && c <= 'Z')
                 count++;
-        return count > config.getMinUpperCase();
+        return count >= config.getMinUpperCase();
     }
 
     @Override
