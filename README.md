@@ -6,6 +6,13 @@
 mvn clean install spring-boot:run
 ```
 
+## Steps to execute tests
+
+```
+mvn test
+```
+
+
 ## Steps to Validate Password
 Use Postman or any other tool to send a post request to the service
 
